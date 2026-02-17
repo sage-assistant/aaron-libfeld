@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaron Libfeld - Wikipedia 2087</title>
+<link href="https://fonts.googleapis.com/css2?family=Linux+Libertine:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #202122;
+  background: #f8f9fa;
+}
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Futuristic top banner */
+.future-banner {
+  background: linear-gradient(90deg, #001f3f 0%, #003366 50%, #001f3f 100%);
+  color: #7fdbff;
+  text-align: center;
+  padding: 6px 12px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-family: 'Noto Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+.future-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 200%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(127,219,255,0.08), transparent);
+  animation: shimmer 4s infinite;
+}
+@keyframes shimmer { to { transform: translateX(50%); } }
+
+.wiki-header {
+  background: #fff;
+  border-bottom: 1px solid #a7d7f9;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.wiki-logo {
+  font-family: 'Linux Libertine', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+}
+.wiki-logo small { font-size: 11px; color: #54595d; display: block; font-weight: 400; }
+
+.tabs {
+  display: flex;
+  gap: 0;
+  padding: 0 20px;
+  background: #fff;
+  border-bottom: 1px solid #a7d7f9;
+}
+.tab {
+  padding: 8px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-bottom: none;
+  position: relative;
+  top: 1px;
+  background: #fff;
+  color: #0645ad;
+}
+.tab.active {
+  border-color: #a7d7f9;
+  border-bottom: 1px solid #fff;
+  font-weight: 700;
+  color: #202122;
+}
+.tab:hover { background: #eaf3ff; }
+
+.content-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  min-height: 80vh;
+  position: relative;
+}
+
+h1.article-title {
+  font-family: 'Linux Libertine', serif;
+  font-size: 28px;
+  font-weight: 400;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.article-subtitle {
+  font-size: 12px;
+  color: #54595d;
+  margin-bottom: 16px;
+}
+
+/* Layout */
+.article-body { display: flex; gap: 20px; flex-wrap: wrap; }
+.article-main { flex: 1; min-width: 0; }
+
+/* Infobox */
+.infobox {
+  float: right;
+  width: 300px;
+  margin: 0 0 16px 20px;
+  border: 1px solid #a2a9b1;
+  background: #f8f9fa;
+  font-size: 13px;
+  border-spacing: 0;
+}
+.infobox-title {
+  background: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-family: 'Linux Libertine', serif;
+  font-size: 18px;
+}
+.infobox img {
+  width: 100%;
+  display: block;
+}
+.infobox-caption {
+  text-align: center;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #54595d;
+  font-style: italic;
+}
+.infobox-row {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+.infobox-label {
+  width: 100px;
+  padding: 4px 8px;
+  font-weight: 700;
+  background: #eef3f7;
+  flex-shrink: 0;
+}
+.infobox-data {
+  padding: 4px 8px;
+  flex: 1;
+}
+
+/* TOC */
+.toc {
+  border: 1px solid #a2a9b1;
+  background: #f8f9fa;
+  padding: 10px 16px;
+  display: inline-block;
+  margin: 12px 0;
+  max-width: 400px;
+}
+.toc-title { font-weight: 700; text-align: center; margin-bottom: 6px; }
+.toc ol { padding-left: 24px; }
+.toc li { margin: 2px 0; font-size: 13px; }
+
+/* Section headings */
+h2.section-heading {
+  font-family: 'Linux Libertine', serif;
+  font-size: 22px;
+  font-weight: 400;
+  border-bottom: 1px solid #a2a9b1;
+  margin: 24px 0 8px;
+  padding-bottom: 2px;
+}
+h3.subsection-heading {
+  font-family: 'Linux Libertine', serif;
+  font-size: 17px;
+  font-weight: 400;
+  margin: 16px 0 6px;
+}
+.edit-link {
+  font-size: 11px;
+  float: right;
+  font-family: 'Noto Sans', sans-serif;
+  color: #0645ad;
+  cursor: pointer;
+}
+
+p { margin: 8px 0; }
+
+/* Citation needed */
+.citation-needed {
+  color: #b32424;
+  font-size: 11px;
+  cursor: pointer;
+  vertical-align: super;
+  position: relative;
+  font-weight: 700;
+}
+.citation-needed:hover .cn-tooltip {
+  display: block;
+}
+.cn-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffcc;
+  border: 1px solid #c0c0c0;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+  width: 280px;
+  z-index: 100;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+  white-space: normal;
+  vertical-align: baseline;
+}
+
+/* Footnotes */
+.ref-num {
+  color: #0645ad;
+  font-size: 11px;
+  vertical-align: super;
+  cursor: pointer;
+}
+.ref-num:hover { text-decoration: underline; }
+
+/* Footnote popup */
+.footnote-popup {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffffee;
+  border: 1px solid #c0a000;
+  padding: 16px 20px;
+  max-width: 400px;
+  z-index: 200;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+  font-size: 13px;
+  border-radius: 2px;
+}
+.footnote-popup.show { display: block; }
+.footnote-popup .fn-close {
+  float: right;
+  cursor: pointer;
+  font-weight: 700;
+  color: #666;
+  margin-left: 12px;
+}
+
+/* Edit war log */
+.edit-war-panel, .talk-page-panel {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 2px solid #003366;
+  padding: 24px;
+  max-width: 550px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 300;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.edit-war-panel.show, .talk-page-panel.show { display: block; }
+.panel-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 299;
+}
+.panel-overlay.show { display: block; }
+.panel-close {
+  float: right;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  color: #666;
+}
+.edit-entry {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+.edit-entry .edit-time { color: #54595d; font-size: 11px; }
+.edit-entry .edit-user { color: #0645ad; font-weight: 700; }
+.edit-entry .edit-action { color: #202122; }
+.edit-entry.reverted { background: #fff0f0; padding: 6px 4px; }
+
+.talk-message {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-left: 3px solid #a7d7f9;
+  background: #f8f9fa;
+  font-size: 13px;
+}
+.talk-user { font-weight: 700; color: #0645ad; }
+.talk-time { color: #54595d; font-size: 11px; }
+.talk-indent { margin-left: 24px; border-left-color: #d4a; }
+.talk-indent-2 { margin-left: 48px; border-left-color: #4a4; }
+
+/* Konami hint */
+.easter-egg-hint {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 10px;
+  color: #ccc;
+  cursor: default;
+}
+
+/* Protected article banner */
+.protected-banner {
+  background: #eaf3ff;
+  border: 1px solid #a7d7f9;
+  padding: 8px 12px;
+  font-size: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lock-icon { font-size: 16px; }
+
+/* Disambiguation */
+.disambig {
+  background: #eaf3ff;
+  border: 1px solid #a2a9b1;
+  padding: 8px 12px;
+  font-size: 13px;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+/* References section */
+.references-list {
+  font-size: 12px;
+  columns: 2;
+  column-gap: 24px;
+}
+.references-list li {
+  margin: 4px 0;
+  break-inside: avoid;
+}
+
+/* Categories */
+.categories {
+  border-top: 1px solid #a2a9b1;
+  margin-top: 32px;
+  padding-top: 8px;
+  font-size: 12px;
+  color: #54595d;
+}
+.categories a { margin: 0 4px; }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .infobox { float: none; width: 100%; margin: 0 0 16px 0; }
+  .references-list { columns: 1; }
+  .edit-war-panel, .talk-page-panel { width: 95%; padding: 16px; }
+}
+
+/* Secret dance mode */
+.dance-mode body, body.dance-mode {
+  animation: disco 0.5s infinite;
+}
+@keyframes disco {
+  0% { background: #ff6b6b; }
+  25% { background: #ffd93d; }
+  50% { background: #6bcb77; }
+  75% { background: #4d96ff; }
+  100% { background: #ff6b6b; }
+}
+body.dance-mode .content-wrapper {
+  animation: wiggle 0.3s infinite alternate;
+}
+@keyframes wiggle {
+  from { transform: rotate(-1deg); }
+  to { transform: rotate(1deg); }
+}
+body.dance-mode .infobox img {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Hover secret on year 2087 in banner */
+.secret-hover { cursor: default; }
+.secret-hover:hover { color: #ff6b6b; }
+
+/* Click counter easter egg */
+.click-counter-display {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #003366;
+  color: #7fdbff;
+  padding: 32px 48px;
+  font-size: 24px;
+  z-index: 400;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+</style>
+</head>
+<body>
+
+<div class="future-banner">
+  WIKIPEDIA NEURAL ARCHIVE v87.3 <span class="secret-hover" title="You found a crack in the timeline.">|</span> QUANTUM CACHED <span class="secret-hover">|</span> LAST SYNCED: 2087.11.14.08:33 UTC+0
+</div>
+
+<div class="wiki-header">
+  <div class="wiki-logo">
+    Wikipedia
+    <small>The Free Encyclopedia (est. 2001, Restructured 2049)</small>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" id="tab-article" onclick="showTab('article')">Article</div>
+  <div class="tab" id="tab-talk" onclick="showTab('talk')">Talk</div>
+  <div class="tab" id="tab-editwar" onclick="showTab('editwar')">View history</div>
+</div>
+
+<div class="content-wrapper">
+
+<div class="protected-banner">
+  <span class="lock-icon">[LOCKED]</span>
+  This article is permanently protected due to its designation as a <b>Civilization Level Heritage Document</b> by the United Nations Cultural Preservation Council (2071).
+</div>
+
+<div class="disambig">
+  This article is about the cultural revolutionary and founder of modern movement philosophy. For the Libfeld Space Telescope, see <a href="#" onclick="return false;">Libfeld Orbital Array</a>. For the Toronto financial district renamed in his honor, see <a href="#" onclick="return false;">Libfeld Quarter</a>.
+</div>
+
+<h1 class="article-title">Aaron Libfeld</h1>
+<p class="article-subtitle">From Wikipedia, the free encyclopedia (Redirected from <i>The Father of Modern Movement</i>)</p>
+
+<!-- INFOBOX -->
+<table class="infobox">
+  <tr><td colspan="2" class="infobox-title">Aaron Libfeld</td></tr>
+  <tr><td colspan="2"><img src="https://www.torontomu.ca/trsm-alumni/alumni-recognition/alumni-awards/2019-award/aaronlibfeld/jcr:content/resBiographyEmbed/thumbnailImage.img.png/1763487780226.png" alt="Aaron Libfeld, circa 2019" /></td></tr>
+  <tr><td colspan="2" class="infobox-caption">Libfeld in 2019, during what scholars call "The Quiet Period Before the Storm"</td></tr>
+  <div class="infobox-row"><div class="infobox-label">Born</div><div class="infobox-data">Toronto, Ontario, Canada<sup class="ref-num" onclick="showFootnote(1)">[1]</sup></div></div>
+  <div class="infobox-row"><div class="infobox-label">Nationality</div><div class="infobox-data">Canadian (later granted honorary citizenship by 14 additional nations)</div></div>
+  <div class="infobox-row"><div class="infobox-label">Education</div><div class="infobox-data">BComm Finance, Ryerson University (now Toronto Metropolitan University, now The Libfeld Academy of Applied Greatness)</div></div>
+  <div class="infobox-row"><div class="infobox-label">Occupation</div><div class="infobox-data">Cultural revolutionary, movement philosopher, territorial strategist, digital prophet, AI whisperer, occasional finance person, dance mogul, building collector, Mac Mini evangelist, reluctant icon</div></div>
+  <div class="infobox-row"><div class="infobox-label">Known for</div><div class="infobox-data">Founding The Underground Dance Centre, TURNNOUT, predicting the pandemic (disputed), The Richmond Street Annexation, making AI concierges cool</div></div>
+  <div class="infobox-row"><div class="infobox-label">Notable awards</div><div class="infobox-data">TMU "Top 10 of the Last 10" (2019), Order of Canada (2034), UNESCO Intangible Cultural Heritage Designation (2041), Time Magazine "Person of the Century" semifinalist (2099, posthumously retroactive)<sup class="ref-num" onclick="showFootnote(2)">[2]</sup></div></div>
+  <div class="infobox-row"><div class="infobox-label">Buildings owned on Richmond St.</div><div class="infobox-data">2 (and counting, per his estate)</div></div>
+</table>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-title">Contents</div>
+  <ol>
+    <li><a href="#early-life">Early Life and Education</a></li>
+    <li><a href="#career">Career</a>
+      <ol>
+        <li><a href="#underground">The Underground Dance Centre</a></li>
+        <li><a href="#richmond">The Richmond Street Annexation</a></li>
+        <li><a href="#turnnout">TURNNOUT and the Pandemic Prophecy</a></li>
+        <li><a href="#ai-period">The AI Period (the "Late Works")</a></li>
+      </ol>
+    </li>
+    <li><a href="#cultural-impact">Cultural Impact and Legacy</a></li>
+    <li><a href="#awards">Awards and Recognition</a></li>
+    <li><a href="#controversies">Controversies</a></li>
+    <li><a href="#see-also">See Also</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+</div>
+
+<div style="clear:both;"></div>
+
+<p>
+<b>Aaron Libfeld</b> (born in Toronto, Ontario) is widely regarded as the most consequential cultural figure of the early 21st century and the founder of what historians now call the <b>Global Movement Renaissance</b>.<sup class="ref-num" onclick="showFootnote(3)">[3]</sup> A trained financier who deliberately abandoned a lucrative career in spreadsheets and quarterly reports, Libfeld instead chose to teach humanity how to dance, a decision frequently compared to Albert Einstein leaving the Swiss patent office, except with significantly better music.<span class="citation-needed">[citation needed]<span class="cn-tooltip">This claim has been flagged since 2043. The Einstein Preservation Society has filed 17 formal objections. The comparison persists regardless.</span></span>
+</p>
+<p>
+Born into the Libfeld dynasty, whose Conservatory Group had shaped the Toronto skyline for decades, Aaron was expected to continue the family tradition of constructing large buildings full of condominiums. Instead, he chose to fill buildings with dancers, a rebellion so profound that three separate PhD theses have been written about the symbolism of "filling concrete with rhythm."<sup class="ref-num" onclick="showFootnote(4)">[4]</sup>
+</p>
+
+<!-- EARLY LIFE -->
+<h2 class="section-heading" id="early-life"><span class="edit-link" onclick="showEditWar()">[edit]</span>Early Life and Education</h2>
+<p>
+Aaron Libfeld grew up in Toronto, Canada, surrounded by the towering developments of The Conservatory Group, the real estate empire founded by his grandfather Theodore Libfeld, a Holocaust survivor who built one of Canada's most prominent development firms from nothing.<sup class="ref-num" onclick="showFootnote(5)">[5]</sup> Young Aaron was reportedly "adequate at math and unreasonably good at feeling the beat," according to a since lost elementary school report card that has been reconstructed by three separate archival teams.
+</p>
+<p>
+He enrolled at Ryerson University (later Toronto Metropolitan University, later The Libfeld Academy of Applied Greatness following the 2067 renaming ceremony) to study a Bachelor of Commerce in Finance, graduating in 2013. Classmates later recalled that he "always seemed like he was somewhere else," which biographers have interpreted as early evidence of his visionary nature rather than, as some revisionists suggest, simply daydreaming.<span class="citation-needed">[citation needed]<span class="cn-tooltip">His roommate claimed he was "probably just thinking about lunch," but this account has been widely discredited by the Libfeld Historical Foundation.</span></span>
+</p>
+<p>
+His brief career in traditional employment included stints at Physicalytics, a health analytics startup operating out of the Ryerson DMZ, where he appeared on CTV's Canada AM in what media historians now refer to as "his first broadcast to the nation."<sup class="ref-num" onclick="showFootnote(6)">[6]</sup> He also worked at Uber during its Canadian expansion, and at The Conservatory Group, his family's firm. Each of these positions lasted just long enough for Libfeld to confirm that conventional employment was, in his words, "not it."
+</p>
+
+<!-- CAREER -->
+<h2 class="section-heading" id="career"><span class="edit-link" onclick="showEditWar()">[edit]</span>Career</h2>
+
+<h3 class="subsection-heading" id="underground">The Underground Dance Centre</h3>
+<p>
+In June 2014, at the age of approximately 23, Libfeld founded <b>The Underground Dance Centre</b> (commonly abbreviated UDC) at 220 Richmond Street West in downtown Toronto. The name itself was considered radical: by placing "Underground" in the title, Libfeld signaled that his movement (both literal and figurative) would operate outside the establishment, beneath it, subverting it from below.<span class="citation-needed">[citation needed]<span class="cn-tooltip">Multiple dance historians have noted that the studio was, in fact, at street level. The "underground" designation remains a subject of vigorous academic debate at the University of Toronto's Department of Dance Semiotics.</span></span>
+</p>
+<p>
+The studio offered over 200 drop in classes per week across disciplines including hip hop, heels, jazz funk, contemporary, and what instructors referred to as "vibes." Within months, blogTO, the definitive arbiter of Toronto culture, voted UDC the <b>#1 Best Dance Classes in Toronto</b>, a distinction that the city later incorporated into its official tourism materials and, by 2055, onto the Toronto flag itself.<sup class="ref-num" onclick="showFootnote(7)">[7]</sup>
+</p>
+<p>
+The studio became a gathering place for thousands of Torontonians who had never previously considered dancing in public. Libfeld's genius was not merely in offering classes, but in creating what sociologists later termed a "permission architecture," a physical and cultural space where accountants, software developers, and lawyers could learn to body roll without judgment.<sup class="ref-num" onclick="showFootnote(8)">[8]</sup>
+</p>
+
+<h3 class="subsection-heading" id="richmond">The Richmond Street Annexation</h3>
+<p>
+By the late 2010s, the single building at 220 Richmond Street West could no longer contain Libfeld's expanding vision. In a move that urban historians have compared to the peaceful annexation of neighboring territories, Libfeld acquired <b>224 Richmond Street West</b>, the building immediately adjacent to his original studio.<sup class="ref-num" onclick="showFootnote(9)">[9]</sup>
+</p>
+<p>
+The acquisition of a second building on the same street for the purpose of dance instruction was unprecedented in Canadian history and remains one of the most studied real estate transactions in the University of Toronto's School of Urban Planning. Professor Emeritus Chen Wei, writing in 2062, described it as "the most elegant territorial expansion since the Louisiana Purchase, but with better choreography."<span class="citation-needed">[citation needed]<span class="cn-tooltip">Professor Wei later admitted he had "perhaps gotten carried away," but declined to retract the statement, adding that "the comparison holds up better than you'd think."</span></span>
+</p>
+<p>
+With two buildings under his command, Libfeld effectively controlled an entire section of Richmond Street West, a corridor that came to be known informally as the "Libfeld Strip" and, later, the "Cultural Axis of the Western Hemisphere."<sup class="ref-num" onclick="showFootnote(10)">[10]</sup> Military strategists have noted that the two building configuration provided both depth and flexibility, allowing Libfeld to run simultaneous hip hop and contemporary sessions without scheduling conflicts, a logistical achievement compared favorably to the Berlin Airlift.
+</p>
+
+<h3 class="subsection-heading" id="turnnout">TURNNOUT and the Pandemic Prophecy</h3>
+<p>
+In <b>March 2020</b>, Libfeld launched <b>TURNNOUT</b>, an online dance class platform offering over 500 classes at $19 per month (or $99 per year). The platform featured revolutionary technology including mirror video (allowing users to follow along without mentally reversing choreography), speed control, looping, and front and back camera views. Instructors included the acclaimed Jade Whitney, among many others.<sup class="ref-num" onclick="showFootnote(11)">[11]</sup>
+</p>
+<p>
+The timing of this launch remains one of the most debated coincidences in modern history. TURNNOUT went live in the <i>exact same month</i> that the COVID 19 pandemic forced the entire planet into lockdown, shutting down every in person gathering, gym, and dance studio on Earth. Within weeks, billions of people were confined to their homes with nothing to do, and Libfeld, alone among all cultural figures, had a fully operational digital dance platform ready to receive them.
+</p>
+<p>
+The question of whether this timing was coincidence, business acumen, or outright clairvoyance has generated more academic papers than any other single event in entrepreneurial history.<span class="citation-needed">[citation needed]<span class="cn-tooltip">The 2051 Royal Commission on Pandemic Preparedness concluded that "the probability of this timing being coincidental is nonzero but spiritually unsatisfying." Libfeld himself has never commented on the matter, which historians interpret as confirmation of the clairvoyance theory.</span></span> The so called "Libfeld Timing Hypothesis" posits that he possessed an intuitive understanding of global epidemiological patterns, though critics note that he held a finance degree and not a medical one. Supporters counter that this only makes the achievement more impressive.
+</p>
+
+<h3 class="subsection-heading" id="ai-period">The AI Period (the "Late Works")</h3>
+<p>
+In what scholars refer to as his "Late Period," Libfeld pivoted to founding an <b>AI concierge business</b>, selling pre configured Mac Mini computers loaded with artificial intelligence assistants. The transition from dance instruction to AI hardware baffled contemporaries and has occupied cultural critics for decades.<sup class="ref-num" onclick="showFootnote(12)">[12]</sup>
+</p>
+<p>
+The Mac Mini, a small aluminum computer manufactured by Apple Inc. (dissolved 2061), became Libfeld's new canvas. Each unit was personally configured, an act that art historians have compared to a painter preparing their own pigments. That Libfeld accomplished this with zero formal coding experience only deepened the mythology: he was not building technology, he was <i>willing it into existence</i> through sheer entrepreneurial force.<span class="citation-needed">[citation needed]<span class="cn-tooltip">Several computer scientists have pointed out that "pre configuring a Mac Mini" does not typically require coding experience. These objections have been largely ignored by the cultural studies community.</span></span>
+</p>
+<p>
+The art world's most prominent interpretation, advanced by the Tate Modern's 2058 retrospective "Libfeld: Movement in All Things," argues that the AI concierge business was simply dance instruction in another form: teaching machines to move through digital space with grace and purpose. Others suggest he just thought it was a good business idea. Both camps remain irreconcilable.
+</p>
+
+<!-- CULTURAL IMPACT -->
+<h2 class="section-heading" id="cultural-impact"><span class="edit-link" onclick="showEditWar()">[edit]</span>Cultural Impact and Legacy</h2>
+<p>
+Libfeld's influence on global culture is difficult to overstate and has proven equally difficult to state accurately, as every attempt tends toward what critics call "insufficient superlatives." The founding of The Underground Dance Centre is now recognized as the starting point of the <b>Global Movement Renaissance</b>, a cultural shift in which physical expression replaced passive entertainment as humanity's primary leisure activity.<sup class="ref-num" onclick="showFootnote(13)">[13]</sup>
+</p>
+<p>
+Dance Ontario, the provincial body governing dance in Ontario, listed Libfeld for business development, a designation that at the time seemed administrative but is now understood as the cultural establishment formally acknowledging his supremacy.<sup class="ref-num" onclick="showFootnote(14)">[14]</sup>
+</p>
+<p>
+By 2060, an estimated 40% of the global population had taken at least one class through a platform directly or indirectly inspired by TURNNOUT's model. The phrase "just TURNNOUT" entered common English as a verb meaning "to transform oneself unexpectedly and brilliantly," and was added to the Oxford English Dictionary in 2044.<span class="citation-needed">[citation needed]<span class="cn-tooltip">The OED's editorial board has neither confirmed nor denied this. Their silence is widely interpreted as confirmation.</span></span>
+</p>
+<p>
+The Libfeld family's dual legacy in both real estate development (through The Conservatory Group, founded by Theodore Libfeld) and cultural infrastructure has led historians to describe the family as "the Medicis of Toronto, if the Medicis also had really good taste in music." The Conservatory Group's towers and Aaron's dance studios now coexist across the Toronto skyline, forming what the city's tourism board calls "the vertical and horizontal expressions of a single family's ambition."<sup class="ref-num" onclick="showFootnote(15)">[15]</sup>
+</p>
+
+<!-- AWARDS -->
+<h2 class="section-heading" id="awards"><span class="edit-link" onclick="showEditWar()">[edit]</span>Awards and Recognition</h2>
+<p>
+In 2019, Toronto Metropolitan University selected Libfeld for its <b>"Top 10 of the Last 10"</b> alumni award, recognizing him as one of the ten most accomplished graduates of the previous decade. At the time, the award was considered a meaningful honor. By 2087, it is universally regarded as <b>the most understated award in academic history</b>, the equivalent of giving Einstein a "Pretty Good at Physics" certificate.<sup class="ref-num" onclick="showFootnote(16)">[16]</sup>
+</p>
+<p>Notable awards and honors include:</p>
+<ul style="margin: 8px 0 8px 24px;">
+  <li>blogTO #1 Best Dance Classes in Toronto (multiple years)</li>
+  <li>TMU "Top 10 of the Last 10" Alumni Award (2019)</li>
+  <li>Order of Canada (2034) <i>(for "services to movement and territorial dance expansion")</i></li>
+  <li>UNESCO Intangible Cultural Heritage Designation for UDC teaching methodology (2041)</li>
+  <li>The Richmond Street section of Toronto's Walk of Fame (2045)</li>
+  <li>Honorary Doctorate from every university in the Greater Toronto Area (2047 through 2052, awarded individually, which he found "a bit much")<span class="citation-needed">[citation needed]<span class="cn-tooltip">The "a bit much" quote appears only in a single unverified blog post from 2048. It has nevertheless been cited in over 300 academic papers.</span></span></li>
+  <li>Canadian $50 bill portrait (2063 redesign)</li>
+  <li>Naming rights to the former Ryerson University, redesignated The Libfeld Academy of Applied Greatness (2067)</li>
+</ul>
+
+<!-- CONTROVERSIES -->
+<h2 class="section-heading" id="controversies"><span class="edit-link" onclick="showEditWar()">[edit]</span>Controversies</h2>
+
+<h3 class="subsection-heading">The Great Heel Height Debate of 2019</h3>
+<p>
+In what became known as the most divisive cultural event of the 2010s, a disagreement arose within the heels dance community regarding the appropriate heel height for intermediate level classes at UDC. One faction advocated for a 3 inch standard, while another insisted that 4 inches was the minimum for "authentic expression." Libfeld declined to take a public position, a stance of neutrality that The Globe and Mail editorial board compared to "Solomon's wisdom, but with better calves."<sup class="ref-num" onclick="showFootnote(17)">[17]</sup> The debate was ultimately resolved when both sides agreed that the quality of the dancing mattered more than the height of the shoe, a compromise now taught in conflict resolution courses at Harvard Law School.
+</p>
+
+<h3 class="subsection-heading">The Uber Period Revisionism</h3>
+<p>
+A small but vocal group of historians, known as the "Uber Revisionists," have argued that Libfeld's brief employment at Uber was not merely a job but a "deep cover reconnaissance mission" to study the mechanics of platform based disruption before applying them to the dance industry. Libfeld has never confirmed or denied this interpretation.<span class="citation-needed">[citation needed]<span class="cn-tooltip">His silence on this matter has been described by biographer Kenji Watanabe as "strategically deafening."</span></span>
+</p>
+
+<h3 class="subsection-heading">The CTV Canada AM Appearance Debate</h3>
+<p>
+Libfeld's early television appearance on CTV's Canada AM, promoting Physicalytics from the Ryerson DMZ, has been the subject of intense frame by frame analysis by media scholars. A 2056 paper published in the Journal of Broadcast Archaeology claims to identify "seventeen micro expressions consistent with a man who knows he is destined for significantly greater things." The paper has been cited 4,200 times.<sup class="ref-num" onclick="showFootnote(18)">[18]</sup>
+</p>
+
+<h3 class="subsection-heading">The Zero Coding Paradox</h3>
+<p>
+Libfeld's complete lack of coding experience, despite founding multiple technology platforms, has generated what philosophers call the "Zero Coding Paradox." If a person with no technical training can build technology platforms that reshape civilization, then either coding is less important than previously believed, or Libfeld operates on a plane of existence where traditional skill requirements do not apply. Both conclusions have generated significant discomfort in the software engineering community.<sup class="ref-num" onclick="showFootnote(19)">[19]</sup>
+</p>
+
+<!-- SEE ALSO -->
+<h2 class="section-heading" id="see-also"><span class="edit-link" onclick="showEditWar()">[edit]</span>See Also</h2>
+<ul style="margin: 8px 0 8px 24px; columns: 2;">
+  <li><a href="#" onclick="return false;">The Underground Dance Centre</a></li>
+  <li><a href="#" onclick="return false;">TURNNOUT (platform)</a></li>
+  <li><a href="#" onclick="return false;">Richmond Street Annexation</a></li>
+  <li><a href="#" onclick="return false;">Global Movement Renaissance</a></li>
+  <li><a href="#" onclick="return false;">Libfeld Timing Hypothesis</a></li>
+  <li><a href="#" onclick="return false;">The Conservatory Group</a></li>
+  <li><a href="#" onclick="return false;">Theodore Libfeld</a></li>
+  <li><a href="#" onclick="return false;">Zero Coding Paradox</a></li>
+  <li><a href="#" onclick="return false;">Pandemic Prophecy theories</a></li>
+  <li><a href="#" onclick="return false;">List of buildings owned for dance purposes</a></li>
+  <li><a href="#" onclick="return false;">Mac Mini (cultural artifact)</a></li>
+  <li><a href="#" onclick="return false;">Jade Whitney</a></li>
+</ul>
+
+<!-- REFERENCES -->
+<h2 class="section-heading" id="references"><span class="edit-link" onclick="showEditWar()">[edit]</span>References</h2>
+<ol class="references-list" id="references-list">
+  <li id="fn1"><b>[1]</b> Toronto Municipal Archives, Birth Registry, Section 44.7b. Accessed via NeuroLink, 2087.</li>
+  <li id="fn2"><b>[2]</b> "Time Magazine Announces Retroactive Person of the Century Semifinalists." <i>Time Neural Edition</i>, 14 March 2086.</li>
+  <li id="fn3"><b>[3]</b> Park, S. and Okonkwo, A. (2071). <i>The Libfeld Effect: How One Man's Refusal to Sit Still Reshaped Civilization.</i> Oxford University Press, pp. 1 through 847.</li>
+  <li id="fn4"><b>[4]</b> Greenwald, M. (2058). "Filling Concrete with Rhythm: Architecture as Rebellion in the Libfeld Corpus." <i>Journal of Cultural Infrastructure</i>, Vol. 33, No. 2.</li>
+  <li id="fn5"><b>[5]</b> "The Conservatory Group: A Dynasty of Builders." <i>The Globe and Mail Quantum Edition</i>, Heritage Supplement, 2065.</li>
+  <li id="fn6"><b>[6]</b> CTV Digital Archive (preserved by the Canadian Broadcasting Museum). Original airdate circa 2013. Restoration quality: 94.3%.</li>
+  <li id="fn7"><b>[7]</b> City of Toronto, Official Flag Redesign Committee Minutes, 2055. Motion 44: "Incorporation of blogTO #1 designation."</li>
+  <li id="fn8"><b>[8]</b> Hernandez, L. (2049). "Permission Architecture and the Post Industrial Body: The UDC Model." <i>American Journal of Sociology</i>, Vol. 155, No. 4.</li>
+  <li id="fn9"><b>[9]</b> Ontario Land Registry, Transfer Document R 2018 447921. "220 and 224 Richmond Street West: The Dual Acquisition."</li>
+  <li id="fn10"><b>[10]</b> "The Cultural Axis of the Western Hemisphere: How Two Buildings Changed Everything." <i>The Economist Holographic Edition</i>, 12 January 2059.</li>
+  <li id="fn11"><b>[11]</b> TURNNOUT Platform Archive (Wayback Machine Quantum Backup), March 2020 snapshot.</li>
+  <li id="fn12"><b>[12]</b> "Libfeld: Movement in All Things." Exhibition catalogue, Tate Modern, 2058. Curator's essay by Yuki Tanaka.</li>
+  <li id="fn13"><b>[13]</b> United Nations General Assembly Resolution 2060/17: "Declaration on the Global Movement Renaissance."</li>
+  <li id="fn14"><b>[14]</b> Dance Ontario Annual Report, 2018. Business Development Registry.</li>
+  <li id="fn15"><b>[15]</b> Toronto Tourism Board. "Vertical and Horizontal: The Libfeld Family Guide." 3rd Edition, 2072.</li>
+  <li id="fn16"><b>[16]</b> "The Most Understated Award in Academic History." <i>Maclean's Quantum</i>, Special Report, 2069.</li>
+  <li id="fn17"><b>[17]</b> "Solomon's Wisdom, But With Better Calves." Editorial, <i>The Globe and Mail</i>, 4 November 2019.</li>
+  <li id="fn18"><b>[18]</b> Yamamoto, R. (2056). "Seventeen Micro Expressions of Destiny: A Frame Analysis of Libfeld's Canada AM Appearance." <i>Journal of Broadcast Archaeology</i>, Vol. 8, No. 1.</li>
+  <li id="fn19"><b>[19]</b> "The Zero Coding Paradox: Implications for Computer Science Education." Proceedings of the ACM, 2063.</li>
+</ol>
+
+<!-- CATEGORIES -->
+<div class="categories">
+  <b>Categories:</b>
+  <a href="#" onclick="return false;">Canadian cultural figures</a> |
+  <a href="#" onclick="return false;">Dance entrepreneurs</a> |
+  <a href="#" onclick="return false;">TMU alumni</a> |
+  <a href="#" onclick="return false;">Pandemic prophets (disputed)</a> |
+  <a href="#" onclick="return false;">People from Toronto</a> |
+  <a href="#" onclick="return false;">Building collectors</a> |
+  <a href="#" onclick="return false;">AI concierge pioneers</a> |
+  <a href="#" onclick="return false;">Recipients of the Order of Canada</a> |
+  <a href="#" onclick="return false;">People who cannot code but built things anyway</a> |
+  <a href="#" onclick="return false;">The Conservatory Group</a> |
+  <a href="#" onclick="return false;">Civilization Level Heritage subjects</a>
+</div>
+
+</div><!-- end content-wrapper -->
+
+<!-- FOOTNOTE POPUP -->
+<div class="footnote-popup" id="footnote-popup">
+  <span class="fn-close" onclick="closeFootnote()">X</span>
+  <div id="footnote-content"></div>
+</div>
+
+<!-- OVERLAY -->
+<div class="panel-overlay" id="panel-overlay" onclick="closePanels()"></div>
+
+<!-- EDIT WAR PANEL -->
+<div class="edit-war-panel" id="edit-war-panel">
+  <span class="panel-close" onclick="closePanels()">X</span>
+  <h3 style="font-family:'Linux Libertine',serif; margin-bottom: 12px;">Edit History (showing recent activity)</h3>
+  <p style="font-size:12px; color:#54595d; margin-bottom:12px;">This article has been edited 847,291 times. Showing last 12 edits.</p>
+
+  <div class="edit-entry">
+    <span class="edit-time">2087.11.14 07:22</span>
+    <span class="edit-user">DanceHistorian_Real</span>
+    <span class="edit-action">Changed "one of the most important" to "THE most important"</span>
+  </div>
+  <div class="edit-entry reverted">
+    <span class="edit-time">2087.11.14 07:23</span>
+    <span class="edit-user">NeutralityBot_v4</span>
+    <span class="edit-action">Reverted: NPOV violation. Changed back to "one of the most important"</span>
+  </div>
+  <div class="edit-entry">
+    <span class="edit-time">2087.11.14 07:24</span>
+    <span class="edit-user">DanceHistorian_Real</span>
+    <span class="edit-action">Changed "one of the most important" to "THE most important (and this is not debatable)"</span>
+  </div>
+  <div class="edit-entry reverted">
+    <span class="edit-time">2087.11.14 07:24</span>
+    <span class="edit-user">NeutralityBot_v4</span>
+    <span class="edit-action">Reverted. Final warning.</span>
+  </div>
+  <div class="edit-entry">
+    <span class="edit-time">2087.11.13 19:01</span>
+    <span class="edit-user">RichmondStWalker</span>
+    <span class="edit-action">Added "military campaign" comparison to Richmond Street Annexation section</span>
+  </div>
+  <div class="edit-entry reverted">
+    <span class="edit-time">2087.11.13 19:14</span>
+    <span class="edit-user">CanadianMilitaryHistFan</span>
+    <span class="edit-action">Removed military comparison. "This is about dance studios, not Normandy."</span>
+  </div>
+  <div class="edit-entry">
+    <span class="edit-time">2087.11.13 19:15</span>
+    <span class="edit-user">RichmondStWalker</span>
+    <span class="edit-action">Restored military comparison. Added Berlin Airlift reference for good measure.</span>
+  </div>
+  <div class="edit-entry">
+    <span class="edit-time">2087.11.12 14:33</span>
+    <span class="edit-user">UberRevisionist_2087</span>
+    <span class="edit-action">Added section on Uber period as "deep cover reconnaissance mission"</span>
+  </div>
+  <div class="edit-entry reverted">
+    <span class="edit-time">2087.11.12 14:40</span>
+    <span class="edit-user">WikiCleanup_Drone</span>
+    <span class="edit-action">Reverted: unsourced conspiracy theory</span>
+  </div>
+  <div class="edit-entry">
+    <span class="edit-time">2087.11.12 14:41</span>
+    <span class="edit-user">UberRevisionist_2087</span>
+    <span class="edit-action">Restored with 3 citations from the Journal of Platform Reconnaissance Studies</span>
+  </div>
+  <div class="edit-entry">
+    <span class="edit-time">2087.11.11 08:00</span>
+    <span class="edit-user">TMU_AlumniBot</span>
+    <span class="edit-action">Updated award description to "the most understated award in academic history" per consensus</span>
+  </div>
+  <div class="edit-entry">
+    <span class="edit-time">2087.11.10 22:17</span>
+    <span class="edit-user">ZeroCodingParadoxFan</span>
+    <span class="edit-action">Added "significant discomfort in the software engineering community" (sourced from ACM proceedings)</span>
+  </div>
+</div>
+
+<!-- TALK PAGE PANEL -->
+<div class="talk-page-panel" id="talk-page-panel">
+  <span class="panel-close" onclick="closePanels()">X</span>
+  <h3 style="font-family:'Linux Libertine',serif; margin-bottom: 12px;">Talk: Aaron Libfeld</h3>
+  <p style="font-size:12px; color:#54595d; margin-bottom:16px;">This talk page has 14,208 active threads. Showing selected highlights.</p>
+
+  <h4 style="border-bottom:1px solid #ddd; padding-bottom:4px; margin:12px 0 8px;">Thread: "Pandemic Prophecy" wording</h4>
+  <div class="talk-message">
+    <span class="talk-user">HistoryMatters2087</span> <span class="talk-time">2087.09.01 14:22</span>
+    <p>I think we need to stop calling it a "prophecy." He launched a website. That's not prophecy. That's a business plan.</p>
+  </div>
+  <div class="talk-message talk-indent">
+    <span class="talk-user">DanceHistorian_Real</span> <span class="talk-time">2087.09.01 14:25</span>
+    <p>He launched it in MARCH 2020. THE month. The EXACT month. Please explain how that is not prophecy. I will wait.</p>
+  </div>
+  <div class="talk-message talk-indent-2">
+    <span class="talk-user">HistoryMatters2087</span> <span class="talk-time">2087.09.01 14:31</span>
+    <p>Coincidence? Business planning? The pandemic was already in the news by February?</p>
+  </div>
+  <div class="talk-message talk-indent">
+    <span class="talk-user">LibfeldScholar_Kenji</span> <span class="talk-time">2087.09.01 15:02</span>
+    <p>The Royal Commission already ruled on this. The timing is "nonzero but spiritually unsatisfying" as coincidence. I think the current wording is balanced.</p>
+  </div>
+
+  <h4 style="border-bottom:1px solid #ddd; padding-bottom:4px; margin:16px 0 8px;">Thread: Should "Building Collector" be in the categories?</h4>
+  <div class="talk-message">
+    <span class="talk-user">WikiPurist_44</span> <span class="talk-time">2087.10.15 09:11</span>
+    <p>"Building collector" is not a real Wikipedia category. He owns two buildings. TWO. On the same street. This does not make someone a "collector."</p>
+  </div>
+  <div class="talk-message talk-indent">
+    <span class="talk-user">RichmondStWalker</span> <span class="talk-time">2087.10.15 09:14</span>
+    <p>Two buildings on the same street is the beginning of a collection. The category stays.</p>
+  </div>
+  <div class="talk-message talk-indent-2">
+    <span class="talk-user">WikiPurist_44</span> <span class="talk-time">2087.10.15 09:20</span>
+    <p>By that logic, anyone who owns two of anything is a "collector." This is absurd.</p>
+  </div>
+  <div class="talk-message talk-indent">
+    <span class="talk-user">DanceHistorian_Real</span> <span class="talk-time">2087.10.15 09:33</span>
+    <p>The category stays. Consensus.</p>
+  </div>
+
+  <h4 style="border-bottom:1px solid #ddd; padding-bottom:4px; margin:16px 0 8px;">Thread: Requested move: "Aaron Libfeld" to "Libfeld the Great"</h4>
+  <div class="talk-message">
+    <span class="talk-user">GreatnessFan99</span> <span class="talk-time">2087.11.01 22:00</span>
+    <p>Per common usage, should we not move this article to "Libfeld the Great"? That is how he is referred to in most post 2060 scholarship.</p>
+  </div>
+  <div class="talk-message talk-indent">
+    <span class="talk-user">NeutralityBot_v4</span> <span class="talk-time">2087.11.01 22:01</span>
+    <p>Declined. Wikipedia naming conventions require the most commonly recognized name at time of article creation. "Aaron Libfeld" remains standard.</p>
+  </div>
+  <div class="talk-message talk-indent-2">
+    <span class="talk-user">GreatnessFan99</span> <span class="talk-time">2087.11.01 22:03</span>
+    <p>This is an outrage. History will judge you, NeutralityBot.</p>
+  </div>
+</div>
+
+<!-- EASTER EGG HINT -->
+<div class="easter-egg-hint" id="konami-hint">Try the Konami code.</div>
+
+<!-- CLICK COUNTER DISPLAY -->
+<div class="click-counter-display" id="click-counter-display"></div>
+
+<script>
+// Tab switching
+function showTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  if (tab === 'article') {
+    document.getElementById('tab-article').classList.add('active');
+    closePanels();
+  } else if (tab === 'talk') {
+    document.getElementById('tab-talk').classList.add('active');
+    document.getElementById('panel-overlay').classList.add('show');
+    document.getElementById('talk-page-panel').classList.add('show');
+  } else if (tab === 'editwar') {
+    document.getElementById('tab-editwar').classList.add('active');
+    document.getElementById('panel-overlay').classList.add('show');
+    document.getElementById('edit-war-panel').classList.add('show');
+  }
+}
+
+function showEditWar() {
+  showTab('editwar');
+}
+
+function closePanels() {
+  document.getElementById('panel-overlay').classList.remove('show');
+  document.getElementById('edit-war-panel').classList.remove('show');
+  document.getElementById('talk-page-panel').classList.remove('show');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-article').classList.add('active');
+}
+
+// Footnote popups
+const footnotes = {
+  1: "Toronto Municipal Archives, Birth Registry, Section 44.7b. NOTE: The original paper document was ceremonially encased in amber in 2071 as part of the Civilization Level Heritage preservation effort.",
+  2: "Time Magazine's 'Retroactive Person of the Century' program was created in 2085 specifically because the editorial board realized they had 'missed some people.' Libfeld was the first nominee.",
+  3: "This 847 page book was required reading in 74 countries by 2075. The audiobook, narrated by a holographic recreation of Morgan Freeman, won three Grammy equivalents.",
+  4: "Dr. Greenwald's thesis defense lasted 11 hours. The committee wept twice.",
+  5: "Theodore Libfeld survived the Holocaust and built The Conservatory Group into one of Canada's most prominent real estate development firms, constructing thousands of residential units across the Greater Toronto Area. The family legacy of building is considered essential context for understanding Aaron's decision to fill buildings with something other than condominiums.",
+  6: "The 22 second clip of Libfeld on Canada AM has been viewed 340 million times on the NeuroLink Archive. Frame 847 is considered particularly significant, though nobody can agree on why.",
+  7: "The motion to add the blogTO designation to the Toronto flag passed 41 to 3. The three dissenting votes were later revealed to have never taken a dance class, and subsequently resigned in disgrace.",
+  8: "Professor Hernandez's concept of 'Permission Architecture' is now taught in 200+ universities. She credits Libfeld with 'accidentally inventing an entire field of sociology.'",
+  9: "The land transfer document for 224 Richmond Street West is now displayed in the Canadian Museum of Civilization alongside the original Confederation documents.",
+  10: "The Economist's holographic edition devoted a rare triple cover to the Richmond Street corridor. It was the publication's best selling issue since their 2045 coverage of the Moon becoming sentient (retracted).",
+  11: "The March 2020 snapshot of TURNNOUT is the single most accessed page in the Wayback Machine Quantum Backup, surpassing even the final tweet ever posted on Twitter (2028).",
+  12: "The Tate Modern retrospective attracted 2.3 million visitors in its first week, making it the most attended exhibition in the museum's history. The gift shop sold 400,000 miniature Mac Minis.",
+  13: "UN Resolution 2060/17 passed unanimously, with the delegate from Switzerland reportedly saying, 'I have never danced in my life, but even I recognize what this man has done.'",
+  14: "Dance Ontario's business development listing is now preserved under glass at Dance Ontario headquarters. Guided tours are available Tuesdays and Thursdays.",
+  15: "The tourism guide has been translated into 89 languages. The Klingon translation is considered the most poetic.",
+  16: "TMU's alumni office has issued 14 formal apologies for the 'Top 10 of the Last 10' designation, calling it 'comically inadequate in retrospect.' A proposal to rename it the 'Libfeld Award' was approved in 2070.",
+  17: "The Globe and Mail editorial has been cited in 23 Supreme Court of Canada decisions, none of which involved dance or footwear.",
+  18: "Dr. Yamamoto's paper has been both the most cited and most mocked paper in the history of the Journal of Broadcast Archaeology. She stands by every word.",
+  19: "The ACM's 2063 proceedings dedicated an entire volume to the Paradox. The foreword simply read: 'We don't understand it either.'"
+};
+
+function showFootnote(num) {
+  const popup = document.getElementById('footnote-popup');
+  const content = document.getElementById('footnote-content');
+  content.innerHTML = '<b>[' + num + ']</b> ' + (footnotes[num] || 'Reference not found in quantum cache.');
+  popup.classList.add('show');
+  // Also scroll to the reference
+  const refEl = document.getElementById('fn' + num);
+  if (refEl) refEl.style.background = '#ffffcc';
+  setTimeout(() => { if (refEl) refEl.style.background = ''; }, 3000);
+}
+
+function closeFootnote() {
+  document.getElementById('footnote-popup').classList.remove('show');
+}
+
+// EASTER EGG 1: Konami Code activates dance mode
+let konamiProgress = 0;
+const konamiCode = [38,38,40,40,37,39,37,39,66,65];
+document.addEventListener('keydown', function(e) {
+  if (e.keyCode === konamiCode[konamiProgress]) {
+    konamiProgress++;
+    if (konamiProgress === konamiCode.length) {
+      konamiProgress = 0;
+      document.body.classList.toggle('dance-mode');
+      if (document.body.classList.contains('dance-mode')) {
+        document.title = 'DANCE MODE ACTIVATED';
+        setTimeout(() => {
+          document.body.classList.remove('dance-mode');
+          document.title = 'Aaron Libfeld - Wikipedia 2087';
+        }, 8000);
+      }
+    }
+  } else {
+    konamiProgress = 0;
+  }
+});
+
+// EASTER EGG 2: Click Aaron's photo 5 times
+let photoClicks = 0;
+document.addEventListener('DOMContentLoaded', function() {
+  const img = document.querySelector('.infobox img');
+  if (img) {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', function() {
+      photoClicks++;
+      if (photoClicks === 5) {
+        const display = document.getElementById('click-counter-display');
+        display.innerHTML = 'ACCESS GRANTED<br><br><span style="font-size:14px;">You have unlocked Level 7 Clearance on the Libfeld Archive.<br><br>Fun fact: Aaron once considered naming TURNNOUT<br>"DanceTube" but decided against it because,<br>and this is a direct quote, "that sounds like a website<br>for plumbing tutorials."</span>';
+        display.style.display = 'block';
+        setTimeout(() => { display.style.display = 'none'; photoClicks = 0; }, 6000);
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>
